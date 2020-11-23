@@ -115,3 +115,16 @@ var getInputElementValue = (id) =>{
     let value = document.getElementById(id).value;
     return value;
 }
+
+// UC4
+function createAndUpdateStorage(employeePayrollData){
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+
+    if(employeePayrollList != undefined){
+        employeePayrollList.push(employeePayrollData);
+    }else{
+        employeePayrollList = [employeePayrollData];
+    }
+    alert(employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
+} 
